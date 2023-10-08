@@ -1,0 +1,42 @@
+#To-Do List
+
+tasks = []
+
+
+def readList():
+    for count, element in enumerate(tasks, 1):
+        print(f"{count}. {element}")
+
+def removeList():
+    print("Enter which number you dont want: ")
+    enter = int(input("Enter index to remove: "))
+    removal = tasks.pop(enter-1)
+    print("Updated tasks\n")
+    readList()
+
+
+def runList():
+    print("ToDoList")
+    print("1 - Add Task")
+    print("2 - Remove Task")
+    print("3 - Read all tasks")
+    userInput = input("What would you like to do?")
+    if userInput == '1':
+        print("User has chosen number 1\n ADD TASK HERE:")
+        addTask = input("")
+        tasks.append(addTask)
+        runList()==True
+    elif userInput == '2':
+        print("User has chosen number 2")
+        readList()
+        removeList()
+    elif userInput == '3':
+        print("User has chosen number 3\n")
+        readList()
+        runList()==True
+    else:
+        print("Invalid choice. Try again")
+        runList()
+
+if True: 
+    runList()
